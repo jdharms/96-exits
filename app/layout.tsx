@@ -22,28 +22,36 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={mw.className}>
-      <SectionContainer>
+        <div className='flex'>
+          <div className='h-screen md:w-12 shrink-0' />
+          <div className='bg-purple h-screen sm:w-24 shrink-0' />
+          <SectionContainer>
             <div className="flex h-screen flex-col justify-between">
-                <header className="flex items-center justify-between py-10">
-                    <div>
-                        <Link href="/">
-                            <div className="flex items-center justify-between">
-                                <div className="mr-3">
-                                    <Image src={logo} alt="site logo" />
-                                </div>
-                            </div>
-                        </Link>
+              <header className="flex items-center justify-between py-10">
+                <div>
+                  <Link href="/">
+                    <div className="flex items-center justify-between">
+                      <div className="mr-3">
+                        <Image src={logo} alt="site logo" />
+                      </div>
                     </div>
-                    <div className="md:flex space-x-3">
-                      <a href="/" className='border-2 w-20 text-center p-2 rounded-full bg-light-gray hover:bg-light-purple'>Home</a>
-                      <a href="/about" className='border-2 w-20 text-center p-2 rounded-full bg-light-gray hover:bg-dark-gray'>About</a>
-                      <a href="/tags" className='border-2 w-20 text-center p-2 rounded-full bg-light-gray hover:bg-dark-gray'>Tags</a>
-                    </div>
-                </header>
-                <main className="mb-auto">{children}</main>
+                  </Link>
+                </div>
+                <div className="md:flex space-x-3">
+                  <a href="/" className='border-2 w-20 text-center p-2 rounded-full bg-light-gray hover:bg-light-purple'>Home</a>
+                  <a href="/about" className='border-2 w-20 text-center p-2 rounded-full bg-light-gray hover:bg-dark-gray'>About</a>
+                  <a href="/tags" className='border-2 w-20 text-center p-2 rounded-full bg-light-gray hover:bg-dark-gray'>Tags</a>
+                </div>
+              </header>
+              <main className="mb-auto">{children}</main>
             </div>
-        </SectionContainer>  
+          </SectionContainer>
+        </div>
       </body>
     </html>
   )
 }
+
+
+{/* <div className='h-screen md:w-24 shrink-0' />
+<div className='bg-purple h-screen sm:w-24 shrink-0' /> */}
