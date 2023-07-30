@@ -1,8 +1,13 @@
 import './globals.css'
 import type { Metadata } from 'next'
+import Head from 'next/head'
 import { Inter } from 'next/font/google'
+import SectionContainer from './components/sectionContainer'
+import Link from 'next/link'
+import Image from 'next/image'
+import logo from './logo.png'
 
-const inter = Inter({ subsets: ['latin'] })
+const mw = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,7 +21,29 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={mw.className}>
+      <SectionContainer>
+            <div className="flex h-screen flex-col justify-between">
+                <header className="flex items-center justify-between py-10">
+                    <div>
+                        <Link href="/">
+                            <div className="flex items-center justify-between">
+                                <div className="mr-3">
+                                    <Image src={logo} alt="site logo" />
+                                </div>
+                            </div>
+                        </Link>
+                    </div>
+                    <div className="md:flex space-x-3">
+                      <a href="/" className='border-2 w-20 text-center p-2 rounded-full bg-light-gray hover:bg-light-purple'>Home</a>
+                      <a href="/about" className='border-2 w-20 text-center p-2 rounded-full bg-light-gray hover:bg-dark-gray'>About</a>
+                      <a href="/tags" className='border-2 w-20 text-center p-2 rounded-full bg-light-gray hover:bg-dark-gray'>Tags</a>
+                    </div>
+                </header>
+                <main className="mb-auto">{children}</main>
+            </div>
+        </SectionContainer>  
+      </body>
     </html>
   )
 }
