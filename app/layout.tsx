@@ -1,13 +1,13 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import Head from 'next/head'
 import { Inter } from 'next/font/google'
+import logoFont from 'next/font/local'
 import SectionContainer from './components/sectionContainer'
 import Link from 'next/link'
-import Image from 'next/image'
-import logo from './logo.png'
+import { ButtonList } from './components/headerButtons'
 
-const mw = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] })
+const snesFont = logoFont({ src: 'SnesItalic-1G9Be.ttf' })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -21,26 +21,26 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={mw.className}>
+      <body className={inter.className}>
         <div className='flex'>
           <div className='h-screen md:w-12 shrink-0' />
-          <div className='bg-purple h-screen sm:w-24 shrink-0' />
+          <div className='h-screen bg-purple sm:w-24 shrink-0' />
           <SectionContainer>
-            <div className="flex h-screen flex-col justify-between">
-              <header className="flex items-center justify-between py-10">
+            <div className="flex flex-col justify-between h-screen">
+              <header className="items-center justify-between py-10 sm:flex">
                 <div>
                   <Link href="/">
                     <div className="flex items-center justify-between">
                       <div className="mr-3">
-                        <Image src={logo} alt="site logo" />
+                        <p className={snesFont.className + " text-8xl"}>96 Exits</p>
                       </div>
                     </div>
                   </Link>
                 </div>
-                <div className="md:flex space-x-3">
-                  <a href="/" className='border-2 w-20 text-center p-2 rounded-full bg-light-gray hover:bg-light-purple'>Home</a>
-                  <a href="/about" className='border-2 w-20 text-center p-2 rounded-full bg-light-gray hover:bg-dark-gray'>About</a>
-                  <a href="/tags" className='border-2 w-20 text-center p-2 rounded-full bg-light-gray hover:bg-dark-gray'>Tags</a>
+                <div className="space-x-3 md:flex">
+                  {ButtonList.map((info) => (
+                    <Link href={info.target} key={info.target} className='w-20 p-2 text-center border-2 rounded-full bg-light-gray hover:bg-light-purple'>{info.text}</Link>
+                  ))}
                 </div>
               </header>
               <main className="mb-auto">{children}</main>
@@ -51,7 +51,3 @@ export default function RootLayout({
     </html>
   )
 }
-
-
-{/* <div className='h-screen md:w-24 shrink-0' />
-<div className='bg-purple h-screen sm:w-24 shrink-0' /> */}
