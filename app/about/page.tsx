@@ -1,3 +1,12 @@
+import { allAbouts } from "@/.contentlayer/generated"
+import { Mdx } from "@/components/mdx";
+
 export default function Page() {
-    return <h1>Hello, Next.js!</h1>
-  }
+    const about = allAbouts[0];
+
+    return (
+    <>
+    <Mdx code={about.body.code} />
+    </>
+    )
+}

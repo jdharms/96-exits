@@ -2,9 +2,9 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import logoFont from 'next/font/local'
-import SectionContainer from './components/sectionContainer'
+import SectionContainer from '../components/sectionContainer'
 import Link from 'next/link'
-import { ButtonList } from './components/headerButtons'
+import { ButtonList } from '../components/headerButtons'
 
 const inter = Inter({ subsets: ['latin'] })
 const snesFont = logoFont({ src: 'SnesItalic-1G9Be.ttf' })

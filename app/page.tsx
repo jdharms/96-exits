@@ -1,4 +1,4 @@
-import List from "@/app/components/list"
+import List from "@/components/list"
 import { allPosts, Post } from 'contentlayer/generated'
 import { parseISO } from "date-fns"
 

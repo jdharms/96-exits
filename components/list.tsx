@@ -1,4 +1,4 @@
-import CustomLink from "@/app/components/link"
+import CustomLink from "@/components/link"
 import { Post } from "@/.contentlayer/generated"
 import { format, parseISO } from 'date-fns'
 
