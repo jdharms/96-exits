@@ -1,6 +1,5 @@
 import NextImage, { ImageProps } from "next/image"
 import { useMDXComponent } from "next-contentlayer/hooks"
-import type { FunctionComponent, MDXComponents } from "mdx/types"
 import React from "react"
 
 const components = {
