@@ -1,34 +1,20 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 96 Exits Blog
 
-## Getting Started
+This is the code and content for my blog at http://www.96exits.com
 
-First, run the development server:
+todo:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+I'd like to put the server setup I did into an Ansible playbook at some
+point.  Some useful links I've used:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+https://codeofconnor.com/implementing-a-continuous-delivery-pipeline-for-my-discord-bot-with-github-actions-podman-and-systemd/
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+https://upcloud.com/resources/tutorials/configure-iptables-ubuntu
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+https://superuser.com/a/858304 (allow loopback interface)
 
-## Learn More
+https://www.nginx.com/blog/setting-up-nginx/#install-nginx
 
-To learn more about Next.js, take a look at the following resources:
+https://askubuntu.com/questions/1414446/whats-the-recommended-way-of-installing-podman-4-in-ubuntu-22-04
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+https://ubuntu.com/server/docs/security-users
