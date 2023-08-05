@@ -1,11 +1,11 @@
 import { allPosts } from "@/.contentlayer/generated"
+import List from "@/components/list";
 
 // tags are known at build time
 export const dynamicParams = false;
 
 export const generateStaticParams = async function() {
     let tagLists = Array.from(new Set(allPosts.map((p) => (p.tagsList)).flat()))
-    console.log(tagLists);
     return tagLists.map((t) => ({tag: t}));
 }
 
@@ -19,8 +19,8 @@ export default function Page({ params }: { params: { tag: string }}) {
     const posts = allPosts.filter((post) => post.tagsList.includes(params.tag))
     return (
         <>
-        <h1>Hello, Next.js!</h1>
-        {posts.map((p) => <p key={p._id}>{p.title}</p>)}
+        <div className="grid justify-items-center"><text className="text-xl font-bold">Posts tagged &quot;{params.tag}&quot;</text></div>
+        <List posts={posts} />
         </>
     )
 }

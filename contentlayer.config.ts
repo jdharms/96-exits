@@ -8,6 +8,7 @@ const removeMdx = function(name: string) {
 export const Post = defineDocumentType(() => ({
   name: 'Post',
   filePathPattern: `posts/*.mdx`,
+  contentType: 'mdx',
   fields: {
     title: { type: 'string', required: true },
     summary: { type: 'string', required: false },

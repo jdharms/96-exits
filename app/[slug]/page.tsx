@@ -19,6 +19,7 @@ async function getPageFromParams(params: PageProps["params"]) {
     return page
 }
 
+export const dynamicParams = false;
 export async function generateStaticParams(): Promise<PageProps["params"][]> {
     return allPages.map((page) => ({
         slug: page.slug
@@ -43,8 +44,8 @@ export default function Page() {
     const about = allPages[0];
 
     return (
-    <>
+    <div className="prose">
     <Mdx code={about.body.code} />
-    </>
+    </div>
     )
 }
