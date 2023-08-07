@@ -14,6 +14,13 @@ export const metadata: Metadata = {
   description: 'Daniel\'s gaming blog',
 }
 
+let analyticsBlock = <></>
+const env = process.env.NODE_ENV;
+if (env === "production") {
+  analyticsBlock = <script data-goatcounter="https://withlovegaming.goatcounter.com/count"
+  async src="//gc.zgo.at/count.js"></script>
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -21,12 +28,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        {analyticsBlock}
+      </head>
       <body className={inter.className}>
         <div className='flex'>
-          <div className='h-screen md:w-12 shrink-0' />
-          <div className='h-screen bg-purple sm:w-24 shrink-0' />
+          <div className='fixed flex'>
+            <div className='h-screen md:w-12 shrink-0' />
+            <div className='h-screen bg-purple sm:w-24 shrink-0' />
+          </div>
           <SectionContainer>
-            <div className="flex flex-col justify-between h-screen">
+            <div className="flex flex-col justify-between h-screen sm:pr-6 md:pr-0">
               <header className="items-center justify-between py-10 sm:flex">
                 <div>
                   <Link href="/">
